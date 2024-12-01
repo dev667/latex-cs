@@ -1,0 +1,50 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsthm, amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+
+% Page layout settings
+\geometry{margin=1in}
+
+\begin{document}
+
+\subsection*{(b)}
+\subsubsection*{(i) \normalfont Wenn f und g injektiv sind, so ist auch h injektiv.}
+
+
+$f(x_1) = f(x_2) \implies x_1 = x_2$ \quad f.a. $x_1, x_2 \in A$ \\
+$g(y_1) = g(y_2) \implies y_1 = y_2$ \quad f.a. $y_1, y_2 \in B$
+\begin{align}
+    h := g(f(x)) \rightarrow g(f(x_1)) &= g(f(x_2)) \\
+    f(x_1) &= f(x_2) \\
+    x_1 &= x_2
+\end{align}
+
+$\rightarrow h$ muss ebenfalls injektiv sein. \hfill \qed
+
+
+
+\subsubsection*{(ii) \normalfont Wenn $h$ surjektiv und $g$ injektiv, dann ist $g$ bijektiv.}
+
+$g$ ist injektiv: f.a. $z \in C$ ex. höchstens ein $y \in B : g(y) = z$
+
+\noindent h ist surjektiv: f.a. $z \in C$ ex. mindestens ein $x \in A : h(x) = z$ \\
+
+\noindent Zu zeigen: $g$ ist surjektiv d.h.
+
+\noindent f.a. $z \in C$ ex. mindestens ein $y \in B : g(y) = z$
+\setcounter{equation}{0}
+\begin{align}
+    h(x) = g(f(x)) = z \\
+    f(x) = y \text{ und } y \in B \\
+    g(y) = z \iff h(x) = z
+\end{align}
+
+\noindent Da $h(x)$ surjektiv ist, muss auch $g(y)$ surjektiv sein. $g$ ist also bijektiv (Injektivität geht aus der Aufgabenstellung hervor).
+
+
+
+\hfill \qed
+\vspace{0.5cm}
+\hrule
+
+\end{document}

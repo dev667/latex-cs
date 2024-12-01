@@ -1,0 +1,55 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsthm, amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+
+% Page layout settings
+\geometry{margin=1in}
+
+\begin{document}
+
+\subsection*{(a) Induktionsbeweis}
+
+\begin{center}
+    \begin{minipage}{0.4\textwidth}
+    $g_1(n) = 5 + g_1(n - 1) + g_1(n - 2)$ \\
+    $g_2(n) = 6 + 6 (n - 2) = 6n - 6$
+    \end{minipage}
+    \end{center}
+
+\noindent INDUKTIONSANFANG: $n = 5$ \\
+    Behauptung: $g_1(5) > g_2(5)$ \\
+    Beweis: \\
+    Es gilt: \hfill $g_1(5) = 5 + 18 + 10 = 33, \quad g_2(5) = 6 \cdot 5 - 6 = 24$ \hfill also: \quad $g_1(5) > g_2(5)$
+
+\vspace{0.5cm}
+    
+\noindent INDUKTIONSSCHRITT: $n \rightarrow n + 1$ \\
+Sei $n \in \mathbb{N}$ und $n \geq 5$ beliebig.
+
+\noindent Induktionsvoraussetzung: 
+    $$g_1(n) > g_2(n)$$
+
+\noindent Behauptung: $g_1(n + 1) > g_2(n + 1)$ \quad also \quad $5 + g_1(n) + g_1(n - 1) > 6(n + 1) - 6$ \quad also \quad $g_1(n + 1) > 6n$
+
+\noindent Beweis: $5 + g_1(n) + g_1(n - 1) > 6n$
+\begin{align}
+    &g_1(n + 1) = 5 + g_1(n) + g_1(n - 1) \\
+    &g_1(n) > 6n - 6, \hspace{1cm} g_1(n - 1) > 6n - 12 \quad \text{(nach IV)} \\
+    &g_1(n + 1) > 5 + 6n - 6 + 6n - 12 \\
+    &g_1(n + 1) > 12n - 13 \\
+    &g_1(n + 1) > 12n - 13 > 6n \iff 6n > 13
+\end{align}
+
+\noindent Insgesamt bewiesen: \\
+$g_1(n) > g_2(n)$ f.a. $n \in \mathbb{N}$ mit $n \geq 5$
+
+\hfill \qed
+\vspace{0.5cm}
+\hrule
+
+
+
+
+
+\end{document}
+
