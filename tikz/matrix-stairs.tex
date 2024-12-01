@@ -1,0 +1,32 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usetikzlibrary{matrix}
+
+% Page layout settings
+\geometry{margin=1in}
+
+\begin{document}
+
+\adjustbox{valign=c, scale=0.5}{
+  \begin{tikzpicture}
+  \pgfsetlinewidth{0.5pt}
+
+  \matrix[matrix of nodes, 
+          nodes={draw, align=center, anchor=center, minimum height=1cm, text width=1.5cm}, 
+          column sep=-\pgflinewidth, row sep=-\pgflinewidth] (m) {
+    \node[draw=none] {1}; & {b} & \\
+    \node[draw=none] {2}; & {b} & {} \\
+    \node[draw=none] {3}; & {$\varepsilon$} & {$\varepsilon$} & {$\varepsilon$} \\
+    \node[draw=none] {4}; & {$\varepsilon$} & {$\varepsilon$} & {$\varepsilon$} & {} \\
+    \node[draw=none] {5}; & {bb} & {b} & {b} & {$\varepsilon$} & {$\varepsilon$} \\
+    \node[draw=none] {6}; & bb & {b} & {b} & {$\varepsilon$} & {$\varepsilon$} & {} \\
+    & \node[draw=none] {0}; & \node[draw=none] {1}; & \node[draw=none] {2}; & \node[draw=none] {3}; & \node[draw=none] {4}; & \node[draw=none] {5}; \\
+  };
+  \end{tikzpicture}
+}
+
+\end{document}
+
