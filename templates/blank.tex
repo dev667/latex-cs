@@ -1,0 +1,130 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsthm} % for proof
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows.meta, matrix}
+\usepackage[ngerman]{babel}
+
+% Page layout settings
+\geometry{margin=1in}
+
+% Header settings
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\fancyhead[L]{\textbf{AG}}
+\fancyhead[C]{\textbf{EThI Blatt 1}}
+\fancyhead[R]{\textbf{\today}}
+
+\fancyfoot[L]{Aufgabe 1}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} % Line thickness
+\renewcommand{\footrulewidth}{0pt} % No line in the footer
+
+
+
+\begin{document}
+
+\section*{Aufgabe 1 \hspace{0.5em} \normalfont Your Names}
+
+
+\subsection*{1.}
+
+\begin{align*}
+    L(M_6) &= \emptyset \\
+    L(M_5) &= \emptyset \\
+    L(M_4) &= L(a^*) \\
+    L(M_3) &= L(a^*) \\
+    L(M_2) &= L(a^*ba^*) \\
+    L(M_1) &= L(a^*ba^*) \\
+    L(M_0) &= L((a|b)a^*ba^*)
+\end{align*}
+
+
+\subsection*{2.}
+
+\begin{minipage}[t]{0.45\textwidth}
+
+Repräsentantensystem: \\
+
+\begin{tikzpicture}
+\pgfsetlinewidth{0.5pt}
+
+\matrix[matrix of nodes,nodes={draw, anchor=center, minimum size=1cm, minimum height=0.5cm}, column sep=-\pgflinewidth, row sep=-\pgflinewidth] (m) {
+  \node[draw=none] {1}; & {b} & \\
+  \node[draw=none] {2}; & {b} & {} \\
+  \node[draw=none] {3}; & {$\varepsilon$} & {$\varepsilon$} & {$\varepsilon$} \\
+  \node[draw=none] {4}; & {$\varepsilon$} & {$\varepsilon$} & {$\varepsilon$} & {} \\
+  \node[draw=none] {5}; & {bb} & {b} & {b} & {$\varepsilon$} & {$\varepsilon$} \\
+  \node[draw=none] {6}; & bb & {b} & {b} & {$\varepsilon$} & {$\varepsilon$} & {} \\
+  & \node[draw=none] {0}; & \node[draw=none] {1}; & \node[draw=none] {2}; & \node[draw=none] {3}; & \node[draw=none] {4}; & \node[draw=none] {5}; \\
+};
+\end{tikzpicture}
+
+
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+
+Äquivalenzklassen:
+
+\begin{align*}
+    [0] &= \{ 0 \} \\
+    [1] &= \{ 1, 2 \} \\
+    [3] &= \{ 3, 4 \} \\
+    [5] &= \{ 5, 6 \} \\
+\end{align*}
+
+
+\end{minipage}
+
+
+
+
+
+
+\subsection*{3.}
+
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt, node distance=2.5cm, on grid, auto, >=Stealth]
+
+% Define the states
+\node[state] (q1) {$[0]$};
+\node[state] (q2) [right=of q1] {$[1]$};
+\node[state, accepting] (q3) [right=of q2] {$[3]$};
+\node[state] (q4) [right=of q3] {$[5]$};
+
+% Initial arrow
+\draw[->, color=blue] (-1.5, 0) -- (q1);
+
+% Transitions
+\path[->] 
+    (q1) edge node {$a, b$} (q2)
+    (q2) edge[loop above] node {$a$} ()
+         edge node {$b$} (q3)
+    (q3) edge[loop above] node {$a$} ()
+         edge node {$b$} (q4)
+    (q4) edge[loop above] node {$a, b$} ();
+
+\end{tikzpicture}
+\end{center}
+
+
+\subsection*{4.}
+
+Repräsentantensystem: $\{\varepsilon, b, bb, bbb \} $ \\
+index($\sim_{L(M)}) = 4$
+
+
+
+
+\vspace{3cm}
+\hrule
+\end{document}
+
