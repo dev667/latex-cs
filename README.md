@@ -7,7 +7,8 @@ Have fun compiling!
 
 ![grafik](https://github.com/user-attachments/assets/37837fc8-3176-4765-bd05-a4d412c3d048)
 
-![grafik](https://github.com/user-attachments/assets/1f47ddff-b45f-4bbe-afbb-010149a04760)
+![grafik](https://github.com/user-attachments/assets/a9a14004-62e7-48cb-8b9c-3c94b55f8ca9)
+
 
 
 
