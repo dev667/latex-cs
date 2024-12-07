@@ -1,0 +1,33 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsthm, amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+
+% Page layout settings
+\geometry{margin=1in}
+
+
+\begin{document}
+
+\section{Pumping Lemma}
+
+Pumping Lemma für die Sprache: $L = \{ b^{4n} a^n \; | \; n \geq 1 \}$  \\
+
+
+\noindent Sei $l \geq 0$ beliebig.
+Betrachte das Wort:
+$$x = b^{4l}a^l \in L \text{ mit } |x| \geq l$$
+
+\noindent Betrachte alle Zerlegungen von $x$ in $uvw$, die die ersten beiden Bedingungen erfüllen: 
+$$v \neq \varepsilon, \quad |uv| \leq l$$
+
+\noindent Dann besteht $uv$ nur aus $b$'s und $v = b^p$ für ein $p \geq 1$
+
+$$u = b^g \quad v = b^p \quad w = b^ka^l \quad \text{wobei} \quad g + p + k = 4l \quad \text{und} \quad p \neq 0$$
+
+\noindent Wähle ein $i \geq 0$, sodass $uv^iw \notin L$ \\
+Für $i = 2$
+
+$$uv^2w = b^{g + 2p + k} a^l = b^{4l+p} a^l \quad \notin L, \quad \text{da } g + 2p + k > 4l$$
+
+
+\end{document}
